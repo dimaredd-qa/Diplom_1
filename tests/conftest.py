@@ -1,12 +1,7 @@
 from unittest.mock import MagicMock
-
 import pytest
 from src.burger import Burger
 
-
-@pytest.fixture
-def burger():
-    return Burger()
 
 @pytest.fixture
 def mock_bun():
@@ -32,12 +27,14 @@ def mock_jalapeno():
     return ingredient
 
 @pytest.fixture
-def burger_with_ingredient(burger, mock_cheese):
+def burger_with_ingredient(mock_cheese):
+    burger = Burger()
     burger.add_ingredient(mock_cheese)
     return burger
 
 @pytest.fixture
-def burger_with_two_ingredients(burger, mock_cheese, mock_jalapeno):
+def burger_with_two_ingredients(mock_cheese, mock_jalapeno):
+    burger = Burger()
     burger.add_ingredient(mock_cheese)
     burger.add_ingredient(mock_jalapeno)
     return burger
