@@ -1,4 +1,3 @@
-import data
 import pytest
 from src.burger import Burger
 from unittest.mock import MagicMock
